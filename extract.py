@@ -1,12 +1,16 @@
 import pandas as pd
 import sqlite3
 from pathlib import Path
+import os
 
+# 1. Automatically create the Presentation folder if it doesn't exist
+os.makedirs("data/Presentation", exist_ok=True)
 DB_PATH = "data/Presentation/BIG_TABLE.db"
 
+# 2. Fixed paths to match your VS Code folder structure!
 SOURCE_PATHS = {
-    "japan": "source/japan_store",
-    "myanmar": "source/myanmar_store"
+    "japan": "data/source/japan_store",
+    "myanmar": "data/source/myanmar_store"
 }
 
 conn = sqlite3.connect(DB_PATH)
